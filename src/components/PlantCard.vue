@@ -1,38 +1,47 @@
 <template>
-  <div class="plant-card" @click="toggleSelection">
-    <input type="checkbox" v-model="selected" class="plant-checkbox" />
-    <img :src="plant.image" :alt="plant.title" class="plant-image" />
+  <div class="plant-card">
+    <input type="checkbox" v-model="selected" class="plant-checkbox" @click.stop="toggleSelection" />
+    <img :src="plant.image" :alt="plant.title" class="plant-image" @click="goToDetailPage" />
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    plant: {
-      type: Object,
-      required: true
-    }
-  },
-  data() {
-    return {
-      selected: false
-    };
-  },
-  methods: {
-    toggleSelection() {
-      this.selected = !this.selected;
-      this.updateLocalStorage();
-    },
-    updateLocalStorage() {
-      let selectedPlants = JSON.parse(localStorage.getItem('SelectedPlants')) || [];
-      if (this.selected) {
-        selectedPlants.push(this.plant);
-      } else {
-        selectedPlants = selectedPlants.filter(p => p.id !== this.plant.id);
-      }
-      localStorage.setItem('SelectedPlants', JSON.stringify(selectedPlants));
-    }
+<script setup>
+import { ref, watchEffect, defineProps } from 'vue';
+import { useRouter } from 'vue-router';
+
+const props = defineProps({
+  plant: {
+    type: Object,
+    required: true
   }
+});
+
+const router = useRouter();
+const selected = ref(false);
+
+const toggleSelection = () => {
+  selected.value = !selected.value;
+  updateLocalStorage();
+};
+
+const updateLocalStorage = () => {
+  let selectedPlants = JSON.parse(localStorage.getItem('SelectedPlants')) || [];
+  if (selected.value) {
+    selectedPlants.push(props.plant);
+  } else {
+    selectedPlants = selectedPlants.filter(p => p.id !== props.plant.id);
+  }
+  localStorage.setItem('SelectedPlants', JSON.stringify(selectedPlants));
+};
+
+// Watch for changes in selected plant in local storage
+watchEffect(() => {
+  const selectedPlants = JSON.parse(localStorage.getItem('SelectedPlants')) || [];
+  selected.value = selectedPlants.some(p => p.id === props.plant.id);
+});
+
+const goToDetailPage = () => {
+  router.push(`/detail/${props.plant.id}`);
 };
 </script>
 
@@ -65,6 +74,7 @@ p {
   width: 100%;
   height: auto;
   border-radius: 0.5rem; /* Asegura que la imagen tenga bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al pasar sobre la imagen */
 }
 .plant-checkbox {
   position: absolute;
