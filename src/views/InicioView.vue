@@ -348,7 +348,143 @@ const plants = ref([
       interior: false,
       montaña: false
     }
-  }
+  },
+  {
+    id: 19,
+    title: 'Pulmonaria',
+    description: 'La pulmonaria es una planta herbácea perenne con hojas manchadas que recuerdan a los pulmones. Suele encontrarse en bosques húmedos y frescos.',
+    image: '/imagenes/plantas/pulmonaria.png',
+    invasive: false,
+    native: true,
+    exotic: false,
+    environment: {
+      prados: false,
+      campos: false,
+      jardines: false,
+      costa: false,
+      interior: true,
+      montaña: true
+    }
+  },
+  {
+    id: 20,
+    title: 'Roble',
+    description: 'El roble es un árbol caducifolio de gran tamaño y longevidad. Forma parte de los bosques caducifolios del País Vasco y es una especie importante para la biodiversidad.',
+    image: '/imagenes/plantas/roble.png',
+    invasive: false,
+    native: true,
+    exotic: false,
+    environment: {
+      prados: false,
+      campos: false,
+      jardines: false,
+      costa: false,
+      interior: true,
+      montaña: true
+    }
+  },
+  {
+    id: 21,
+    title: 'Haya',
+    description: 'La haya es un árbol de hoja caduca muy común en los bosques del País Vasco. Su madera es muy apreciada y sus hojas adquieren tonalidades rojizas en otoño.',
+    image: '/imagenes/plantas/haya.png',
+    invasive: false,
+    native: true,
+    exotic: false,
+    environment: {
+      prados: false,
+      campos: false,
+      jardines: false,
+      costa: false,
+      interior: true,
+      montaña: true
+    }
+  },
+  {
+    id: 22,
+    title: 'Eucalipto',
+    description: 'El eucalipto es un árbol originario de Australia introducido en muchas partes del mundo. Se cultiva por su rápido crecimiento y su madera, pero puede desplazar a la vegetación autóctona.',
+    image: '/imagenes/plantas/eucalipto.png',
+    invasive: true,
+    native: false,
+    exotic: true,
+    environment: {
+      prados: false,
+      campos: false,
+      jardines: false,
+      costa: false,
+      interior: true,
+      montaña: true
+    }
+  },
+  {
+    id: 23,
+    title: 'Helecho',
+    description: 'Los helechos son plantas sin flores que se reproducen por esporas. Son muy comunes en zonas húmedas y sombrías, formando parte de la vegetación de los bosques del País Vasco.',
+    image: '/imagenes/plantas/helecho.png',
+    invasive: false,
+    native: false,
+    exotic: false,
+    environment: {
+      prados: false,
+      campos: false,
+      jardines: false,
+      costa: false,
+      interior: true,
+      montaña: true
+    }
+  },
+  {
+    id: 24,
+    title: 'Encina',
+    description: 'La encina es un árbol emblemático del Mediterráneo. Forma bosques característicos en las regiones más cálidas del País Vasco, proporcionando alimento y refugio a una amplia variedad de especies.',
+    image: '/imagenes/plantas/encina.png',
+    invasive: false,
+    native: true,
+    exotic: false,
+    environment: {
+      prados: false,
+      campos: false,
+      jardines: false,
+      costa: false,
+      interior: true,
+      montaña: true
+    }
+  },
+  {
+    id: 25,
+    title: 'Ortiga',
+    description: 'La ortiga es una planta herbácea con hojas urticantes. Crece en zonas húmedas y sombrías, y se utiliza en medicina tradicional y como alimento en algunas culturas.',
+    image: '/imagenes/plantas/ortiga.png',
+    invasive: false,
+    native: true,
+    exotic: false,
+    environment: {
+      prados: false,
+      campos: false,
+      jardines: true,
+      costa: false,
+      interior: true,
+      montaña: true
+    }
+  },
+  {
+    id: 26,
+    title: 'Hinojo Silvestre',
+    description: 'El hinojo silvestre es una planta aromática con hojas plumosas y flores amarillas. Crece en bordes de caminos y terrenos baldíos, y se utiliza en la cocina y la medicina.',
+    image: '/imagenes/plantas/hinojo_silvestre.png',
+    invasive: false,
+    native: true,
+    exotic: false,
+    environment: {
+      prados: true,
+      campos: false,
+      jardines: true,
+      costa: false,
+      interior: true,
+      montaña: true
+    }
+  },
 ]);
 
 
