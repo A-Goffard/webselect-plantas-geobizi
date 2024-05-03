@@ -95,8 +95,8 @@ const closeMobileNav = () => {
     flex-direction: row;
     padding: 0.5em 0;
     transition: 0.5s ease all;
-    width: 98%;
-    margin: 0rem 1rem;
+    width: 100%;
+    margin: 0rem 0rem;
   }
   
   header nav .branding img {

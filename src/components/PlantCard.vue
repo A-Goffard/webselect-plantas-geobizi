@@ -1,12 +1,20 @@
 <template>
-    <div class="plant-card">
-      <h2>{{ plant.title }}</h2>
-      <p>{{ plant.description }}</p>
-    </div>
+  <div class="plant-card">
+    <img :src="plant.image" :alt="plant.title" />
+    <h3>{{ plant.title }}</h3>
+    <p>{{ plant.description }}</p>
+  </div>
 </template>
-  
-<script setup>
 
+<script>
+export default {
+  props: {
+    plant: {
+      type: Object,
+      required: true
+    }
+  }
+};
 </script>
 
 <style scoped>
@@ -15,7 +23,7 @@
   border-radius: 0.5rem;
   border: solid 0.15rem rgb(27, 73, 8);
   padding: 1rem;
-  background-color: var(--blanco);
+  background-color: white;
   box-shadow: 0rem 0rem 1rem 0.1rem #26B12C;
   transition: 250ms ease;
 }
