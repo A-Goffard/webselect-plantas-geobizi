@@ -16,7 +16,7 @@
     <div class="contenedor-medio">
       <div>
         <h2>¿Cuáles de estas plantas identificas?</h2>
-        <h3>Seleccionalas y al final de la ruta envía el resultado para conseguir alguna pista</h3>
+        <h3>Seleccionalas y al final de la ruta envía el resultado para descubrir algunos datos</h3>
 
 
         <div class="contenedor-plantas-imagenes">

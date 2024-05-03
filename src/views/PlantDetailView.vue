@@ -22,7 +22,9 @@
             <div class="cont-resumen">
               <h1>{{ plant.title }}</h1>
               <p>{{ plant.description }}</p>
-              <img :src="plant.image" alt="plants Image" class="plants-image">
+              <div class="imagen">
+                <img :src="plant.image" alt="plants Image" class="plants-image">
+              </div>
               <h3>Localización</h3>
               <p>{{ plant.location }}</p>
               <h3>Apariencia</h3>
@@ -460,6 +462,9 @@ button:hover {
     cursor: pointer;
 }
 .cont-resumen{
+  display: flex;
+  flex-direction: column;
+
   width: 100%;
   margin: 1rem;
   border-radius: 0.5rem;
@@ -473,7 +478,21 @@ button:hover {
   box-shadow: 0rem 0rem 1rem 0.3rem #2ad232;
   border: solid 0.15rem rgb(44, 119, 15);
 }
-img {
+.imagen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   width: 100%;
+}
+
+img {
+  margin: 1rem;
+  max-width: 25rem;
+}
+@media only screen and (max-width: 768px) {
+img {
+  max-width: 15rem;
+}
 }
 </style>
