@@ -1,74 +1,39 @@
 <template>
-    <header :class="{ 'scrolled-nav': scrolledNav }">
-      <nav>
-        <div class="branding">
-          <img src="@/assets/GeobiziLogo.png" class="logo" alt="">
-        </div>
-        <ul v-show="!mobile" class="navigation">
+  <header :class="{ 'scrolled-nav': scrolledNav }">
+    <nav>
+      <div class="branding">
+        <img src="@/assets/GeobiziLogo.png" class="logo" alt="">
+      </div>
+      <ul v-show="!mobile" class="navigation">
+        <li>
+          <router-link to="/" class="NavButton link" @click="closeMobileNav">Inicio</router-link>
+        </li>
+        <li>
+          <router-link to="/contacto" class="NavButton link" @click="closeMobileNav">Contacto</router-link>
+        </li>
+      </ul>
+      <div class="icon">
+        <button @click="toggleMobileNav" v-show="mobile">
+          <img :class="{ 'icon-active': mobileNav }" src="@/assets/logoBurguer.png" class="hojitas" alt="">
+        </button>
+      </div>
+      <transition name="mobile-nav">
+        <ul v-show="mobileNav" class="dropdown-nav">
           <li>
-            <router-link class="NavButton link" :to="{name: 'inicio'}" @click="closeMobileNav">Inicio</router-link>
+            <router-link to="/" class="NavButton link" @click="closeMobileNav">Inicio</router-link>
           </li>
           <li>
-            <router-link class="NavButton link" :to="{name: 'filosofia'}" @click="closeMobileNav">Filosofía</router-link>
-          </li>
-          <li>
-            <router-link class="NavButton link" :to="{name: 'servicios'}" @click="closeMobileNav">Servicios</router-link>
-          </li>
-          <li>
-            <router-link class="NavButton link" :to="{name: 'calendario'}" @click="closeMobileNav">Calendario</router-link>
-          </li>
-          <li>
-            <router-link class="NavButton link" :to="{name: 'reservas'}" @click="closeMobileNav">Reservas</router-link>
-          </li>
-          <li>
-            <router-link class="NavButton link" :to="{name: 'geotienda'}" @click="closeMobileNav">Geotienda</router-link>
-          </li>
-          <li>
-            <router-link class="NavButton link" :to="{name: 'blog'}" @click="closeMobileNav">Blog</router-link>
-          </li>
-          <li>
-            <router-link class="NavButton link" :to="{name: 'contacto'}" @click="closeMobileNav">Contacto</router-link>
+            <router-link to="/contacto" class="NavButton link" @click="closeMobileNav">Contacto</router-link>
           </li>
         </ul>
-        <div class="icon">
-            <button @click="toggleMobileNav" v-show="mobile">
-                <img :class="{ 'icon-active': mobileNav }" src="@/assets/logoBurguer.png" class="hojitas" alt="">
-            </button>
-        </div>
-        <transition name="mobile-nav">
-          <ul v-show="mobileNav" class="dropdown-nav">
-            <li>
-              <router-link class="NavButton link" :to="{name: 'inicio'}" @click="closeMobileNav">Inicio</router-link>
-            </li>
-            <li>
-              <router-link class="NavButton link" :to="{name: 'filosofia'}" @click="closeMobileNav">Filosofía</router-link>
-            </li>
-            <li>
-              <router-link class="NavButton link" :to="{name: 'servicios'}" @click="closeMobileNav">Servicios</router-link>
-            </li>
-            <li>
-              <router-link class="NavButton link" :to="{name: 'calendario'}" @click="closeMobileNav">Calendario</router-link>
-            </li>
-            <li>
-              <router-link class="NavButton link" :to="{name: 'reservas'}" @click="closeMobileNav">Reservas</router-link>
-            </li>
-            <li>
-              <router-link class="NavButton link" :to="{name: 'geotienda'}" @click="closeMobileNav">Geotienda</router-link>
-            </li>
-            <li>
-              <router-link class="NavButton link" :to="{name: 'blog'}" @click="closeMobileNav">Blog</router-link>
-            </li>
-            <li>
-              <router-link class="NavButton link" :to="{name: 'contacto'}" @click="closeMobileNav">Contacto</router-link>
-            </li>
-          </ul>
-        </transition>
-      </nav>
-    </header>
-  </template>
+      </transition>
+    </nav>
+  </header>
+</template>
   
   <script setup>
   import { ref, onMounted, onUnmounted } from 'vue';
+
   
   const mobileNav = ref(false);
   const mobile = ref(true);
