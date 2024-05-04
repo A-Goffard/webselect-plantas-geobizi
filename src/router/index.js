@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router';
 import InicioView from '../views/InicioView.vue';
 import ContactoView from '../views/ContactoView.vue';
 import PlantDetailView from '../views/PlantDetailView.vue';
+import ResultView from '@/views/ResultView.vue';
+
 const routes = [
     {
         path: '/',
@@ -12,6 +14,11 @@ const routes = [
         path: '/contacto',
         name: 'contacto',
         component: ContactoView,
+    },
+    {
+        path: '/result',
+        name: 'result',
+        component: ResultView,
     },
     {
         path: '/plantas/:id',

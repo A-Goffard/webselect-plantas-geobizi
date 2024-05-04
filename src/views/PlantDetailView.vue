@@ -51,9 +51,7 @@ const plants = ref([
   {
     id: 1,
     title: 'Diente de León',
-    description: 'El diente de león es una plantsa herbácea perenne muy común en prados, campos y jardines. Sus hojas tienen forma de dientes y son comestibles.',
-    location: 'El diente de león es originario de Europa y Asia, pero ahora se encuentra distribuido por todo el mundo.',
-    appearance: 'Es una planta con hojas lobuladas que forman una roseta basal. Produce flores amarillas que se transforman en pequeñas cabezas de semillas blancas y plumosas.',
+    description: 'El diente de león es una planta herbácea perenne muy común en prados, campos y jardines. Sus hojas tienen forma de dientes y son comestibles.',
     image: '/imagenes/plantas/diente_de_leon.png',
     invasive: false,
     native: true,
@@ -71,8 +69,6 @@ const plants = ref([
     id: 2,
     title: 'Margarita',
     description: 'La margarita es una flor silvestre con pétalos blancos y amarillos. Suele crecer en prados y campos abiertos, siendo muy común en primavera.',
-    location: 'La margarita se encuentra de forma natural en Europa, Asia y América del Norte.',
-    appearance: 'Es una planta herbácea con flores blancas y amarillas en forma de disco rodeadas por pétalos blancos.',
     image: '/imagenes/plantas/margarita.png',
     invasive: false,
     native: true,
@@ -89,9 +85,7 @@ const plants = ref([
   {
     id: 3,
     title: 'Lino',
-    description: 'El lino es una plantsa cultivada por sus semillas y su fibra. Se utiliza en la industria textil y alimentaria, siendo una fuente de ácidos grasos omega-3.',
-    location: 'El lino es originario de la región del Mediterráneo, pero ahora se cultiva en diversas partes del mundo.',
-    appearance: 'Es una planta con tallos delgados y hojas estrechas. Produce flores azules o blancas y cápsulas de semillas.',
+    description: 'El lino es una planta cultivada por sus semillas y su fibra. Se utiliza en la industria textil y alimentaria, siendo una fuente de ácidos grasos omega-3.',
     image: '/imagenes/plantas/lino.png',
     invasive: false,
     native: false,
@@ -108,9 +102,7 @@ const plants = ref([
   {
     id: 4,
     title: 'Malva',
-    description: 'La malva es una plantsa herbácea con flores de color rosa o morado. Se utiliza en medicina tradicional para tratar problemas respiratorios y digestivos.',
-    location: 'La malva es originaria de Europa, Asia y África, pero ahora se encuentra en muchas regiones del mundo.',
-    appearance: 'Es una planta con hojas lobuladas y flores grandes y vistosas que pueden ser de color rosa, morado o blanco.',
+    description: 'La malva es una planta herbácea con flores de color rosa o morado. Se utiliza en medicina tradicional para tratar problemas respiratorios y digestivos.',
     image: '/imagenes/plantas/malva.png',
     invasive: false,
     native: true,
@@ -127,9 +119,7 @@ const plants = ref([
   {
     id: 5,
     title: 'Achicoria',
-    description: 'La achicoria es una plantsa de hojas amargas que se utiliza en ensaladas y como sustituto del café. También se cultiva por su raíz, rica en inulina.',
-    location: 'La achicoria es originaria de Europa y Asia, pero se ha naturalizado en muchas partes del mundo.',
-    appearance: 'Es una planta con hojas alargadas y dentadas que forman una roseta basal. Produce flores azules o blancas en tallos altos.',
+    description: 'La achicoria es una planta de hojas amargas que se utiliza en ensaladas y como sustituto del café. También se cultiva por su raíz, rica en inulina.',
     image: '/imagenes/plantas/achicoria.png',
     invasive: false,
     native: false,
@@ -146,9 +136,7 @@ const plants = ref([
   {
     id: 6,
     title: 'Zarzaparrilla',
-    description: 'La zarzaparrilla es una plantsa trepadora con propiedades medicinales. Se utiliza en infusiones y suplementos para mejorar la salud del sistema urinario.',
-    location: 'La zarzaparrilla es originaria de América y se encuentra principalmente en zonas tropicales y subtropicales.',
-    appearance: 'Es una planta trepadora con tallos largos y delgados. Produce pequeñas flores blancas o verdosas y bayas rojas o negras.',
+    description: 'La zarzaparrilla es una planta trepadora con propiedades medicinales. Se utiliza en infusiones y suplementos para mejorar la salud del sistema urinario.',
     image: '/imagenes/plantas/zarzaparrilla.png',
     invasive: false,
     native: true,
@@ -165,9 +153,7 @@ const plants = ref([
   {
     id: 7,
     title: 'Madreselva',
-    description: 'La madreselva es una plantsa trepadora con flores aromáticas. Se utiliza en jardinería y perfumería por su agradable fragancia.',
-    location: 'La madreselva es originaria de Europa, Asia y América del Norte, pero ahora se cultiva en muchas regiones del mundo.',
-    appearance: 'Es una planta trepadora con hojas opuestas y flores tubulares que pueden ser blancas, amarillas, rosas o rojas.',
+    description: 'La madreselva es una planta trepadora con flores aromáticas. Se utiliza en jardinería y perfumería por su agradable fragancia.',
     image: '/imagenes/plantas/madreselva.png',
     invasive: false,
     native: true,
@@ -185,8 +171,6 @@ const plants = ref([
     id: 8,
     title: 'Tamarix',
     description: 'El tamarix es un arbusto o árbol pequeño resistente a la sequía. Es invasivo en algunas regiones y puede desplazar a la vegetación autóctona.',
-    location: 'El tamarix es originario de Eurasia y África, pero se ha introducido en muchas partes del mundo como planta ornamental y para control de la erosión.',
-    appearance: 'Es un arbusto o árbol pequeño con ramas delgadas y plumosas. Produce pequeñas flores rosadas o blancas en racimos.',
     image: '/imagenes/plantas/tamarix.png',
     invasive: true,
     native: false,
@@ -204,8 +188,6 @@ const plants = ref([
     id: 9,
     title: 'Pino de Monterrey',
     description: 'El pino de Monterrey es una especie de pino originaria de América del Norte. Se cultiva como árbol ornamental y para la producción de madera.',
-    location: 'El pino de Monterrey se encuentra de forma natural en el suroeste de Estados Unidos y el noreste de México.',
-    appearance: 'Es un árbol con forma cónica y ramas horizontales. Tiene agujas largas y flexibles agrupadas en fascículos.',
     image: '/imagenes/plantas/pino_de_monterrey.png',
     invasive: true,
     native: false,
@@ -222,9 +204,7 @@ const plants = ref([
   {
     id: 10,
     title: 'Plumero Pampeano',
-    description: 'El plumero pampeano es una plantsa invasora originaria de Sudáfrica. Se propaga rápidamente y puede desplazar a la vegetación autóctona en áreas naturales.',
-    location: 'El plumero pampeano es originario de Sudáfrica, pero se ha introducido en muchas partes del mundo como planta ornamental y se ha convertido en una especie invasora.',
-    appearance: 'Es una planta herbácea con hojas estrechas y plumosas. Produce inflorescencias densas y plumosas de color blanco, rosa o morado.',
+    description: 'El plumero pampeano es una planta invasora originaria de Sudáfrica. Se propaga rápidamente y puede desplazar a la vegetación autóctona en áreas naturales.',
     image: '/imagenes/plantas/plumero_pampeano.png',
     invasive: true,
     native: false,
@@ -242,8 +222,6 @@ const plants = ref([
     id: 11,
     title: 'Uña de Gato',
     description: 'La uña de gato es una enredadera originaria de América del Sur. Se utiliza en medicina tradicional por sus propiedades antiinflamatorias y antioxidantes.',
-    location: 'La uña de gato es originaria de la selva amazónica y otras regiones de América del Sur.',
-    appearance: 'Es una enredadera leñosa con ganchos afilados que se enganchan a las superficies. Produce pequeñas flores tubulares y bayas rojas o negras.',
     image: '/imagenes/plantas/una_de_gato.png',
     invasive: false,
     native: true,
@@ -260,9 +238,7 @@ const plants = ref([
   {
     id: 12,
     title: 'Valeriana Roja',
-    description: 'La valeriana roja es una plantsa medicinal utilizada para tratar la ansiedad y el insomnio. Sus raíces tienen propiedades sedantes y relajantes.',
-    location: 'La valeriana roja es originaria de Europa y Asia, pero ahora se cultiva en muchas partes del mundo.',
-    appearance: 'Es una planta con tallos altos y delgados. Produce flores pequeñas de color rosa, blanco o púrpura en inflorescencias.',
+    description: 'La valeriana roja es una planta medicinal utilizada para tratar la ansiedad y el insomnio. Sus raíces tienen propiedades sedantes y relajantes.',
     image: '/imagenes/plantas/valeriana_roja.png',
     invasive: false,
     native: true,
@@ -279,9 +255,7 @@ const plants = ref([
   {
     id: 13,
     title: 'Vinca Pervinca',
-    description: 'La vinca pervinca es una plantsa ornamental de hojas perennes y flores violetas o blancas. Se utiliza en jardinería como cobertura de suelo en zonas sombrías.',
-    location: 'La vinca pervinca es originaria de Europa y se encuentra principalmente en bosques y áreas sombreadas.',
-    appearance: 'Es una planta rastrera con hojas brillantes y flores en forma de embudo que pueden ser violetas, blancas o rosas.',
+    description: 'La vinca pervinca es una planta ornamental de hojas perennes y flores violetas o blancas. Se utiliza en jardinería como cobertura de suelo en zonas sombrías.',
     image: '/imagenes/plantas/vinca_pervinca.png',
     invasive: false,
     native: false,
@@ -298,9 +272,7 @@ const plants = ref([
   {
     id: 14,
     title: 'Cerraja',
-    description: 'La cerraja es una plantsa silvestre comestible rica en nutrientes. Sus hojas se utilizan en ensaladas y sus raíces en la medicina tradicional.',
-    location: 'La cerraja es originaria de Europa y Asia, pero ahora se encuentra distribuida por todo el mundo.',
-    appearance: 'Es una planta con hojas grandes y dentadas que forman una roseta basal. Produce pequeñas cabezas de flores amarillas.',
+    description: 'La cerraja es una planta silvestre comestible rica en nutrientes. Sus hojas se utilizan en ensaladas y sus raíces en la medicina tradicional.',
     image: '/imagenes/plantas/cerraja.png',
     invasive: false,
     native: true,
@@ -317,9 +289,7 @@ const plants = ref([
   {
     id: 15,
     title: 'Rábano Silvestre',
-    description: 'El rábano silvestre es una plantsa comestible de la familia de las brasicáceas. Sus hojas y raíces tienen un sabor picante y se utilizan en la cocina.',
-    location: 'El rábano silvestre se encuentra de forma natural en Europa, Asia y África, en zonas con suelos húmedos y ricos en nutrientes.',
-    appearance: 'Es una planta con hojas verdes y dentadas que forman una roseta basal. Produce flores blancas o amarillas en tallos altos.',
+    description: 'El rábano silvestre es una planta comestible de la familia de las brasicáceas. Sus hojas y raíces tienen un sabor picante y se utilizan en la cocina.',
     image: '/imagenes/plantas/rabano_silvestre.png',
     invasive: false,
     native: true,
@@ -337,8 +307,6 @@ const plants = ref([
     id: 16,
     title: 'Argoma',
     description: 'La argoma es un arbusto espinoso originario del norte de África. Se utiliza en jardinería y paisajismo por su resistencia a la sequía y su aspecto decorativo.',
-    location: 'La argoma es originaria del norte de África, pero ahora se cultiva en muchas partes del mundo como planta ornamental.',
-    appearance: 'Es un arbusto espinoso con ramas densas y erectas. Produce pequeñas flores amarillas o blancas en racimos.',
     image: '/imagenes/plantas/argoma.png',
     invasive: true,
     native: false,
@@ -356,8 +324,6 @@ const plants = ref([
     id: 17,
     title: 'Brezo',
     description: 'El brezo es un arbusto de la familia Ericaceae muy común en zonas de montaña y páramos. Sus flores son rosadas o blancas y atraen a abejas y mariposas.',
-    location: 'El brezo se encuentra de forma natural en Europa, Asia y América del Norte, principalmente en zonas montañosas y páramos.',
-    appearance: 'Es un arbusto bajo con ramas delgadas y flexibles. Produce flores en forma de campana que pueden ser rosadas, blancas o rojas.',
     image: '/imagenes/plantas/brezo.png',
     invasive: false,
     native: true,
@@ -374,9 +340,7 @@ const plants = ref([
   {
     id: 18,
     title: 'Trébol Morado',
-    description: 'El trébol morado es una plantsa herbácea con flores de color púrpura característica. Suele encontrarse en prados y campos abiertos, y es conocido por su capacidad para fijar nitrógeno en el suelo.',
-    location: 'El trébol morado es originario de Europa y Asia, pero se ha introducido en muchas partes del mundo como planta forrajera y ornamental.',
-    appearance: 'Es una planta con tallos rastreros y hojas trifoliadas. Produce inflorescencias globosas de color púrpura intenso.',
+    description: 'El trébol morado es una planta herbácea con flores de color púrpura característica. Suele encontrarse en prados y campos abiertos, y es conocido por su capacidad para fijar nitrógeno en el suelo.',
     image: '/imagenes/plantas/trebol_morado.png',
     invasive: false,
     native: true,
@@ -389,7 +353,143 @@ const plants = ref([
       interior: false,
       montaña: false
     }
-  }
+  },
+  {
+    id: 19,
+    title: 'Pulmonaria',
+    description: 'La pulmonaria es una planta herbácea perenne con hojas manchadas que recuerdan a los pulmones. Suele encontrarse en bosques húmedos y frescos.',
+    image: '/imagenes/plantas/pulmonaria.png',
+    invasive: false,
+    native: true,
+    exotic: false,
+    environment: {
+      prados: false,
+      campos: false,
+      jardines: false,
+      costa: false,
+      interior: true,
+      montaña: true
+    }
+  },
+  {
+    id: 20,
+    title: 'Roble',
+    description: 'El roble es un árbol caducifolio de gran tamaño y longevidad. Forma parte de los bosques caducifolios del País Vasco y es una especie importante para la biodiversidad.',
+    image: '/imagenes/plantas/roble.png',
+    invasive: false,
+    native: true,
+    exotic: false,
+    environment: {
+      prados: false,
+      campos: false,
+      jardines: false,
+      costa: false,
+      interior: true,
+      montaña: true
+    }
+  },
+  {
+    id: 21,
+    title: 'Haya',
+    description: 'La haya es un árbol de hoja caduca muy común en los bosques del País Vasco. Su madera es muy apreciada y sus hojas adquieren tonalidades rojizas en otoño.',
+    image: '/imagenes/plantas/haya.png',
+    invasive: false,
+    native: true,
+    exotic: false,
+    environment: {
+      prados: false,
+      campos: false,
+      jardines: false,
+      costa: false,
+      interior: true,
+      montaña: true
+    }
+  },
+  {
+    id: 22,
+    title: 'Eucalipto',
+    description: 'El eucalipto es un árbol originario de Australia introducido en muchas partes del mundo. Se cultiva por su rápido crecimiento y su madera, pero puede desplazar a la vegetación autóctona.',
+    image: '/imagenes/plantas/eucalipto.png',
+    invasive: true,
+    native: false,
+    exotic: true,
+    environment: {
+      prados: false,
+      campos: false,
+      jardines: false,
+      costa: false,
+      interior: true,
+      montaña: true
+    }
+  },
+  {
+    id: 23,
+    title: 'Helecho',
+    description: 'Los helechos son plantas sin flores que se reproducen por esporas. Son muy comunes en zonas húmedas y sombrías, formando parte de la vegetación de los bosques del País Vasco.',
+    image: '/imagenes/plantas/helecho.png',
+    invasive: false,
+    native: false,
+    exotic: false,
+    environment: {
+      prados: false,
+      campos: false,
+      jardines: false,
+      costa: false,
+      interior: true,
+      montaña: true
+    }
+  },
+  {
+    id: 24,
+    title: 'Encina',
+    description: 'La encina es un árbol emblemático del Mediterráneo. Forma bosques característicos en las regiones más cálidas del País Vasco, proporcionando alimento y refugio a una amplia variedad de especies.',
+    image: '/imagenes/plantas/encina.png',
+    invasive: false,
+    native: true,
+    exotic: false,
+    environment: {
+      prados: false,
+      campos: false,
+      jardines: false,
+      costa: false,
+      interior: true,
+      montaña: true
+    }
+  },
+  {
+    id: 25,
+    title: 'Ortiga',
+    description: 'La ortiga es una planta herbácea con hojas urticantes. Crece en zonas húmedas y sombrías, y se utiliza en medicina tradicional y como alimento en algunas culturas.',
+    image: '/imagenes/plantas/ortiga.png',
+    invasive: false,
+    native: true,
+    exotic: false,
+    environment: {
+      prados: false,
+      campos: false,
+      jardines: true,
+      costa: false,
+      interior: true,
+      montaña: true
+    }
+  },
+  {
+    id: 26,
+    title: 'Hinojo Silvestre',
+    description: 'El hinojo silvestre es una planta aromática con hojas plumosas y flores amarillas. Crece en bordes de caminos y terrenos baldíos, y se utiliza en la cocina y la medicina.',
+    image: '/imagenes/plantas/hinojo_silvestre.png',
+    invasive: false,
+    native: true,
+    exotic: false,
+    environment: {
+      prados: true,
+      campos: false,
+      jardines: true,
+      costa: false,
+      interior: true,
+      montaña: true
+    }
+  },
 ]);
 
 
