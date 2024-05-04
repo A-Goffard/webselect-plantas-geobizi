@@ -24,6 +24,18 @@
     <div class="stats">
       <h2>Estadísticas de la actividad</h2>
       <TotalPlantsStat />
+      <TotalInvasiveStat />
+      <TotalNativeStat />
+      <TotalCamposStat />
+      <TotalPradosStat />
+      <TotalCostaStat />
+      <TotalInteriorStat />
+      <TotalMontanaStat />
+      <TotalJardinesStat />
+
+
+
+      
       <!-- Otros componentes de estadísticas aquí -->
     </div>
 </div>
@@ -31,6 +43,16 @@
 
 <script setup>
 import TotalPlantsStat from '../components/stats/TotalPlantsStat.vue';
+import TotalInvasiveStat from '../components/stats/TotalInvasiveStat.vue';
+import  TotalNativeStat from '../components/stats/TotalNativeStat.vue';
+import  TotalCamposStat from '../components/stats/TotalCamposStat.vue';
+import  TotalPradosStat from '../components/stats/TotalPradosStat.vue';
+import  TotalCostaStat from '../components/stats/TotalCostaStat.vue';
+import  TotalInteriorStat from '../components/stats/TotalInteriorStat.vue';
+import  TotalMontanaStat from '../components/stats/TotalMontanaStat.vue';
+import  TotalJardinesStat from '../components/stats/TotalJardinesStat.vue';
+
+
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
