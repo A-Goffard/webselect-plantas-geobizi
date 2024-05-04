@@ -18,6 +18,7 @@
     <div>
       <h2 class="osc">¿Qué nos dicen estas plantas?</h2>
     </div>
+    <button @click="volver">Volver</button>
   </div>
 
     <div class="stats">
@@ -30,7 +31,18 @@
 
 <script setup>
 import TotalPlantsStat from '../components/stats/TotalPlantsStat.vue';
+import { useRouter } from 'vue-router';
 
+const router = useRouter();
+
+const volver = () => {
+    const route = router.currentRoute.value;
+    
+    const plantId = route.params.id;
+    console.log(plantId);
+    
+    router.push({ name: 'inicio' });
+  };
 </script>
 
 
@@ -57,7 +69,10 @@ h1 {
 }
 .contenedor-medio {
   padding: 2rem;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 button {

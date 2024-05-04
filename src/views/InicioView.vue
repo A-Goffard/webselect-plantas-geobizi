@@ -23,7 +23,7 @@
           <div class="contenedor-plantas-imagenes">
             <div v-for="plant in plants" :key="plant.id">
               <router-link :to="'/plantas/' + plant.id">
-                <PlantCard class="fitxa" :plant="plant" @click="togglePlantSelection(plant)" />
+                <PlantCard class="fitxa" :plant="plant"/>
               </router-link>
             </div>
           </div>
@@ -51,7 +51,7 @@ import { useRouter } from 'vue-router';
 const router = useRouter();
 
 const plants = ref([
-  {
+{
     id: 1,
     title: 'Diente de León',
     description: 'El diente de león es una planta herbácea perenne muy común en prados, campos y jardines. Sus hojas tienen forma de dientes y son comestibles.',
@@ -59,6 +59,8 @@ const plants = ref([
     invasive: false,
     native: true,
     exotic: false,
+    caracteristic: 'prados',
+    soil: 'calizo',
     environment: {
       prados: true,
       campos: true,
@@ -76,6 +78,8 @@ const plants = ref([
     invasive: false,
     native: true,
     exotic: false,
+    caracteristic: 'prados',
+    soil: 'calizo',
     environment: {
       prados: true,
       campos: true,
@@ -93,6 +97,8 @@ const plants = ref([
     invasive: false,
     native: false,
     exotic: false,
+    caracteristic: 'interior',
+    soil: 'arcilloso',
     environment: {
       prados: false,
       campos: false,
@@ -110,6 +116,8 @@ const plants = ref([
     invasive: false,
     native: true,
     exotic: false,
+    caracteristic: 'prados',
+    soil: 'arcilloso',
     environment: {
       prados: true,
       campos: false,
@@ -127,6 +135,8 @@ const plants = ref([
     invasive: false,
     native: false,
     exotic: false,
+    caracteristic: 'prados',
+    soil: 'calizo',
     environment: {
       prados: true,
       campos: false,
@@ -144,6 +154,8 @@ const plants = ref([
     invasive: false,
     native: true,
     exotic: false,
+    caracteristic: 'jardines',
+    soil: 'húmedo',
     environment: {
       prados: false,
       campos: false,
@@ -161,6 +173,8 @@ const plants = ref([
     invasive: false,
     native: true,
     exotic: false,
+    caracteristic: 'jardines',
+    soil: 'húmedo',
     environment: {
       prados: false,
       campos: false,
@@ -178,6 +192,8 @@ const plants = ref([
     invasive: true,
     native: false,
     exotic: true,
+    caracteristic: 'interior',
+    soil: 'arenoso',
     environment: {
       prados: false,
       campos: false,
@@ -195,6 +211,8 @@ const plants = ref([
     invasive: true,
     native: false,
     exotic: false,
+    caracteristic: 'interior',
+    soil: 'arenoso',
     environment: {
       prados: false,
       campos: false,
@@ -212,6 +230,8 @@ const plants = ref([
     invasive: true,
     native: false,
     exotic: true,
+    caracteristic: 'interior',
+    soil: 'arenoso',
     environment: {
       prados: false,
       campos: false,
@@ -229,6 +249,8 @@ const plants = ref([
     invasive: false,
     native: true,
     exotic: false,
+    caracteristic: 'jardines',
+    soil: 'húmedo',
     environment: {
       prados: false,
       campos: false,
@@ -246,6 +268,8 @@ const plants = ref([
     invasive: false,
     native: true,
     exotic: false,
+    caracteristic: 'jardines',
+    soil: 'húmedo',
     environment: {
       prados: false,
       campos: false,
@@ -263,6 +287,8 @@ const plants = ref([
     invasive: false,
     native: false,
     exotic: false,
+    caracteristic: 'jardines',
+    soil: 'húmedo',
     environment: {
       prados: false,
       campos: false,
@@ -280,6 +306,8 @@ const plants = ref([
     invasive: false,
     native: true,
     exotic: false,
+    caracteristic: 'prados',
+    soil: 'arcilloso',
     environment: {
       prados: true,
       campos: false,
@@ -297,6 +325,8 @@ const plants = ref([
     invasive: false,
     native: true,
     exotic: false,
+    caracteristic: 'prados',
+    soil: 'calizo',
     environment: {
       prados: true,
       campos: true,
@@ -314,6 +344,8 @@ const plants = ref([
     invasive: true,
     native: false,
     exotic: true,
+    caracteristic: 'interior',
+    soil: 'arenoso',
     environment: {
       prados: false,
       campos: false,
@@ -331,6 +363,8 @@ const plants = ref([
     invasive: false,
     native: true,
     exotic: false,
+    caracteristic: 'montaña',
+    soil: 'ácido',
     environment: {
       prados: false,
       campos: false,
@@ -348,6 +382,8 @@ const plants = ref([
     invasive: false,
     native: true,
     exotic: false,
+    caracteristic: 'prados',
+    soil: 'arcilloso',
     environment: {
       prados: true,
       campos: true,
@@ -365,6 +401,8 @@ const plants = ref([
     invasive: false,
     native: true,
     exotic: false,
+    caracteristic: 'montaña',
+    soil: 'húmedo',
     environment: {
       prados: false,
       campos: false,
@@ -382,6 +420,8 @@ const plants = ref([
     invasive: false,
     native: true,
     exotic: false,
+    caracteristic: 'montaña',
+    soil: 'ácido',
     environment: {
       prados: false,
       campos: false,
@@ -399,6 +439,8 @@ const plants = ref([
     invasive: false,
     native: true,
     exotic: false,
+    caracteristic: 'montaña',
+    soil: 'ácido',
     environment: {
       prados: false,
       campos: false,
@@ -416,6 +458,8 @@ const plants = ref([
     invasive: true,
     native: false,
     exotic: true,
+    caracteristic: 'interior',
+    soil: 'arenoso',
     environment: {
       prados: false,
       campos: false,
@@ -433,6 +477,8 @@ const plants = ref([
     invasive: false,
     native: false,
     exotic: false,
+    caracteristic: 'montaña',
+    soil: 'húmedo',
     environment: {
       prados: false,
       campos: false,
@@ -450,6 +496,8 @@ const plants = ref([
     invasive: false,
     native: true,
     exotic: false,
+    caracteristic: 'interior',
+    soil: 'arcilloso',
     environment: {
       prados: false,
       campos: false,
@@ -467,6 +515,8 @@ const plants = ref([
     invasive: false,
     native: true,
     exotic: false,
+    caracteristic: 'jardines',
+    soil: 'húmedo',
     environment: {
       prados: false,
       campos: false,
@@ -484,6 +534,8 @@ const plants = ref([
     invasive: false,
     native: true,
     exotic: false,
+    caracteristic: 'prados',
+    soil: 'calizo',
     environment: {
       prados: true,
       campos: false,
@@ -492,8 +544,10 @@ const plants = ref([
       interior: true,
       montaña: true
     }
-  },
+  }
 ]);
+
+
 
 
 const storedSelectedPlants = JSON.parse(localStorage.getItem('SelectedPlants')) || [];
@@ -504,10 +558,7 @@ const storedSelectedPlants = JSON.parse(localStorage.getItem('SelectedPlants')) 
   console.log(SelectedPlants.value.length)
 
 
-const togglePlantSelection = () => {
 
-results();
-};
 
 const results = () => {
   // Obtener SelectedPlants del almacenamiento local si está disponible
@@ -559,6 +610,7 @@ const results = () => {
 const enviar = () => {
 
   router.push('/result');
+  results();
 };
 </script>
 
