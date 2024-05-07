@@ -5,12 +5,23 @@
         <img src="@/assets/GeobiziLogo.png" class="logo" alt="">
       </div>
       <ul v-show="!mobile" class="navigation">
+
         <li>
           <router-link to="/" class="NavButton link" @click="closeMobileNav">Inicio</router-link>
         </li>
+
+        <li>
+          <router-link to="/plantas" class="NavButton link" @click="closeMobileNav">Descubre tu entorno</router-link>
+        </li>
+
+        <li>
+          <router-link to="/reto" class="NavButton link" @click="closeMobileNav">¡Reto!</router-link>
+        </li>
+
         <li>
           <router-link to="/contacto" class="NavButton link" @click="closeMobileNav">Contacto</router-link>
         </li>
+
       </ul>
       <div class="icon">
         <button @click="toggleMobileNav" v-show="mobile">
@@ -19,12 +30,23 @@
       </div>
       <transition name="mobile-nav">
         <ul v-show="mobileNav" class="dropdown-nav">
+
           <li>
             <router-link to="/" class="NavButton link" @click="closeMobileNav">Inicio</router-link>
           </li>
+
+          <li>
+          <router-link to="/plantas" class="NavButton link" @click="closeMobileNav">Descubre tu entorno</router-link>
+        </li>
+
+        <li>
+          <router-link to="/reto" class="NavButton link" @click="closeMobileNav">¡Reto!</router-link>
+        </li>
+
           <li>
             <router-link to="/contacto" class="NavButton link" @click="closeMobileNav">Contacto</router-link>
           </li>
+
         </ul>
       </transition>
     </nav>

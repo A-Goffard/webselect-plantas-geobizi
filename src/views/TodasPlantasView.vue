@@ -1,49 +1,52 @@
 <template>
-    <div class="contenedor-principal">
-  
-      <div class="contenedor-cabecero">
-  
-        <div class="contenedor-intro">
-          <h1>Geobizi</h1>
-          <h2>A la caza de las plantsas</h2>
-          <h3>Selecciona las plantsas que ves en tu camino</h3>
-        </div>
-  
-      </div>
-  
-        <div class="contenedor-medio">
-          <h2>¿Cuáles de estas plantsas identificas?</h2>
-          <h3>Seleccionalas y al final de la ruta envía el resultado para conseguir alguna pista</h3>
-          
-          <button @click="volver">Volver</button>
-  
-          <div class="contenedor-plantsas-detalle">
+  <div class="contenedor-principal">
 
-            <div class="cont-resumen">
-              <h1>{{ plant.title }}</h1>
-              <p>{{ plant.description }}</p>
-              <div class="imagen">
-                <img :src="plant.image" alt="plants Image" class="plants-image">
-              </div>
-              <h3>Localización</h3>
-              <p>{{ plant.location }}</p>
-              <h3>Apariencia</h3>
-              <p>{{ plant.appearance }}</p>
-            
-            
-            
+    <div class="contenedor-cabecero">
+
+
+      <div class="contenedor-intro">
+        <h1>Geobizi</h1>
+        <h2>A la caza de las plantas</h2>
+        <h3>Selecciona las plantas que ves en tu camino</h3>
+      </div>
+
+    </div>
+
+
+    <div class="contenedor-medio">
+      <div>
+        <h2>¿Cuáles de estas plantas identificas?</h2>
+        <h3>Seleccionalas y al final de la ruta envía el resultado para descubrir algunos datos</h3>
+
+        <div class="plants-button">
+
+          <div class="contenedor-plantas-imagenes">
+            <div v-for="plant in plants" :key="plant.id">
+              <router-link :to="'/plantas/' + plant.id">
+                <PlantCard class="fitxa" :plant="plant"/>
+              </router-link>
             </div>
           </div>
 
+        <button @click="enviar">Resultados</button>
+          
         </div>
 
-    </div>
-  
-  </template>
+
+
+      </div>
+
+      </div>
+
+  </div>
+
+</template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import PlantCard from '../components/PlantCard.vue';
+import { ref } from 'vue';
 import { useRouter } from 'vue-router';
+
 
 const router = useRouter();
 
@@ -1472,23 +1475,71 @@ const plants = ref([
 
 
 
+const storedSelectedPlants = JSON.parse(localStorage.getItem('SelectedPlants')) || [];
+  
+  const SelectedPlants = ref(storedSelectedPlants);
 
 
-const volver = () => {
-    const route = router.currentRoute.value;
-    
-    const plantId = route.params.id;
-    console.log(plantId);
-    
-    router.push({ name: 'inicio' });
+  console.log(SelectedPlants.value.length)
+
+
+
+
+const results = () => {
+  // Obtener SelectedPlants del almacenamiento local si está disponible
+  const storedSelectedPlants = JSON.parse(localStorage.getItem('SelectedPlants')) || [];
+  
+  const SelectedPlants = ref(storedSelectedPlants);
+
+  console.log('Calculando resultados...');
+  const totalPlants = SelectedPlants.value.length;
+  const totalInvasive = SelectedPlants.value.filter(plant => plant.invasive).length;
+  const totalNative = SelectedPlants.value.filter(plant => plant.native).length;
+  const totalExotic = SelectedPlants.value.filter(plant => plant.exotic).length;
+
+  let totalsByEnvironment = {
+    prados: SelectedPlants.value.filter(plant => plant.environment.prados).length,
+    campos: SelectedPlants.value.filter(plant => plant.environment.campos).length,
+    jardines: SelectedPlants.value.filter(plant => plant.environment.jardines).length,
+    costa: SelectedPlants.value.filter(plant => plant.environment.costa).length,
+    interior: SelectedPlants.value.filter(plant => plant.environment.interior).length,
+    montaña: SelectedPlants.value.filter(plant => plant.environment.montaña).length
   };
 
-    // Buscamos el proyecto correspondiente en la lista de proyectos
-    const plant = computed(() => {
-    const plantId = router.currentRoute.value.params.id;
-    return plants.value.find(proj => proj.id === parseInt(plantId));
-  });
+  // Mostrar resultados en la consola
+  console.log('Número total de plantas seleccionadas:', totalPlants);
+  console.log('Número total de plantas invasivas:', totalInvasive);
+  console.log('Número total de plantas nativas:', totalNative);
+  console.log('Número total de plantas exóticas:', totalExotic);
+  console.log('Totales de plantas por ambiente:', totalsByEnvironment);
+
+  // Mostrar resultados por ambiente
+  console.log('--- Resultados por ambiente ---');
+  for (const [environment, total] of Object.entries(totalsByEnvironment)) {
+    console.log(`${environment}: ${total}`);
+  }
+
+  // Guardar resultados en el almacenamiento local
+  const resultados = {
+    totalPlants,
+    totalInvasive,
+    totalNative,
+    totalExotic,
+    totalsByEnvironment
+  };
+
+  localStorage.setItem('resultados', JSON.stringify(resultados));
+};
+
+
+const enviar = () => {
+
+  router.push('/result');
+  results();
+};
 </script>
+
+
 
 <style scoped>
 h1 {
@@ -1513,15 +1564,17 @@ h1 {
 }
 .contenedor-medio {
   padding: 2rem;
+
+}
+.contenedor-plantas-imagenes{
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
-.contenedor-plantsas-detalle{
-  width: 100%;
+.plants-button {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -1539,39 +1592,5 @@ button:hover {
     background-color: rgb(27, 73, 8); 
     color:  #26B12C; 
     cursor: pointer;
-}
-.cont-resumen{
-  display: flex;
-  flex-direction: column;
-
-  width: 100%;
-  margin: 1rem;
-  border-radius: 0.5rem;
-  border: solid 0.15rem rgb(27, 73, 8);
-  padding: 1rem;
-  background-color: white;
-  box-shadow: 0rem 0rem 1rem 0.1rem #26B12C;
-  transition: 250ms ease;
-}
-.cont-resumen:hover{
-  box-shadow: 0rem 0rem 1rem 0.3rem #2ad232;
-  border: solid 0.15rem rgb(44, 119, 15);
-}
-.imagen {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  width: 100%;
-}
-
-img {
-  margin: 1rem;
-  max-width: 25rem;
-}
-@media only screen and (max-width: 768px) {
-img {
-  max-width: 15rem;
-}
 }
 </style>
